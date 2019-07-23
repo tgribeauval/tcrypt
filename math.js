@@ -55,18 +55,16 @@ rl.question('How many S9s you own?: ', (n) => {
                     var yearlyProfit = (yearlyRevenue - (cost*12)).toFixed(2);
                     var paybackPeriod = (investment/(n*monthlyProfit)).toFixed(2);
 
-                    
-                    console.log("BTC PRICE IN USD:", btcPrice);
-                    
-                    console.log("DAILY REVENUE:",n*dailyRevenue);
-                    console.log("WEEKLY REVENUE:",n*weelyRevenue);
-                    console.log("MONTHLY REVENUE:",n*monthlyRevenue);
-                    console.log("YEARLY REVENUE:",n*yearlyRevenue);
-
-
-                    console.log("MONTHLY PROFIT:", n*monthlyProfit);
-                    console.log ("YEARLY PROFT:", n*yearlyProfit);
-                    console.log("PAYBACK PERIOD:", paybackPeriod);
+                    console.log("CALCULATIONS ARE BASED ON:")
+                    console.log("THE CURRENT BTC PRICE IN USD:");
+                    console.log(btcPrice)
+                    console.log("DAILY REVENUE:",n*dailyRevenue,"$USD");
+                    console.log("WEEKLY REVENUE:",n*weelyRevenue,"$USD");
+                    console.log("MONTHLY REVENUE:",n*monthlyRevenue,"$USD");
+                    console.log("MONTHLY PROFIT:", n*monthlyProfit,"$USD");
+                    console.log("YEARLY REVENUE:",n*yearlyRevenue,"$USD");                   
+                    console.log ("YEARLY PROFT:", n*yearlyProfit,"$USD");
+                    console.log("PAYBACK PERIOD:", paybackPeriod,"MONTHS");
                     process.exit()
                 });
                 }).on('error', function(e){
