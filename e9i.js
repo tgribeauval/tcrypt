@@ -5,21 +5,21 @@ const rl = readline.createInterface({
   
   });
 
-rl.question('How many S9s you own?: ', (n) => {
+rl.question('How many e9i you own?: ', (n) => {
     if (isNaN(n)) {
       console.log("You must enter a number smartass");
       rl.close();
       process.stdin.destroy();
       process.exit()
     }
-    rl.question('What is your investment in USD? ', (investment) => {
+    rl.question('What is your investment in USD? (313.57$) ', (investment) => {
         if (isNaN(investment)) {
             console.log("You must enter a number smartass");
             rl.close();
             process.stdin.destroy();
             process.exit()
         }
-        rl.question('Cost in electricity in USD? ', (cost) => {
+        rl.question('Cost in electricity in USD? (86.46$) ', (cost) => {
 
             if (isNaN(cost)) {
                 console.log("You must enter a number smartass");
@@ -33,7 +33,7 @@ rl.question('How many S9s you own?: ', (n) => {
             http.createServer(function(req, res) {});
     
     
-            var url = "https://www.coincalculators.io/api?name=bitcoin&hashrate=14500000000000&power=1320&powercost=0&difficultytime=0";
+            var url = "https://www.coincalculators.io/api?name=bitcoin&hashrate=13500000000000&power=1420&powercost=0&difficultytime=0";
     
             http.get(url, function(res){
                 var body = '';
@@ -50,6 +50,7 @@ rl.question('How many S9s you own?: ', (n) => {
                     var yearlyRevenue = data.revenueInYearUSD.toFixed(2);
 
                     var btcPrice = data.exchanges[0].price;
+                    
 
                     var monthlyProfit = (monthlyRevenue - cost).toFixed(2);
                     var yearlyProfit = (yearlyRevenue - (cost*12)).toFixed(2);
@@ -74,4 +75,3 @@ rl.question('How many S9s you own?: ', (n) => {
 
     });
 });
-
